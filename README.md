@@ -15,7 +15,16 @@ Construct a cloud of $200$ points with
 
 ```python
 >>> import numpy as np
->>> points = np.random.randn(200, 2)
+>>> data = {"input": np.random.randn(200, 2)}
+```
+
+```python
+>>> from np.flight import Client
+
+# Connect to the server
+>>> with Client("grpc+tls://cvxball-710171668953.us-central1.run.app:443") as client:
+...     # The server will return a dictionary of numpy arrays
+...     results = client.compute(command="test", data=data)
 ```
 
 This installs/updates [uv](https://github.com/astral-sh/uv),
