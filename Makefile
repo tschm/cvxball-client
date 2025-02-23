@@ -8,6 +8,7 @@ venv:
 .PHONY: install
 install: venv ## Install a virtual environment
 	@uv pip install --upgrade pip
+	@uv pip install -r requirements.txt
 
 
 .PHONY: fmt
@@ -31,4 +32,4 @@ help:  ## Display this help screen
 .PHONY: marimo
 marimo: install ## Install Marimo
 	@uv pip install marimo
-	@uv run marimo edit --sandbox notebooks/cvxball-client.py
+	@uv run marimo edit notebooks/cvxball-client.py
