@@ -7,10 +7,6 @@
 
 ### **Set Up Environment**
 
-```bash
-make install
-```
-
 Construct a cloud of $200$ points with
 
 ```python
@@ -48,13 +44,7 @@ Construct a cloud of $200$ points with
 ...     return ax
 ```
 
-This installs/updates [uv](https://github.com/astral-sh/uv),
-creates your virtual environment and installs dependencies.
-
-## Contributing
-
-- Fork the repository
-- Create your feature branch (git checkout -b feature/amazing-feature)
-- Commit your changes (git commit -m 'Add some amazing feature')
-- Push to the branch (git push origin feature/amazing-feature)
-- Open a Pull Request
+```python
+>>> ax = plot_points(results["points"], results["midpoint"], results["radius"])
+>>> ax.set_title("Smallest enclosing circle")
+```
