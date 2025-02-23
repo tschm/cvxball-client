@@ -42,9 +42,7 @@ Construct a cloud of $200$ points with
 
 ...     ax.grid(True)
 ...     return ax
-```
 
-```python
 >>> ax = plot_points(results["points"], results["midpoint"], results["radius"])
 >>> ax.set_title("Smallest enclosing circle")
 ```
