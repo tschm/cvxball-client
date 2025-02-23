@@ -22,3 +22,5 @@ Construct a cloud of $200$ points with
 ...     # The server will return a dictionary of numpy arrays
 ...     results = client.compute(command="test", data=data)
 ```
+
+Here is a complete [demo](demo.py).
