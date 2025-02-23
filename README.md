@@ -31,13 +31,13 @@ Construct a cloud of $200$ points with
 ...     _, ax = plt.subplots()
 ...     ax.set_aspect("equal")
 
-        # plot the cloud of points
+...     # plot the cloud of points
 ...     ax.plot(p[:, 0], p[:, 1], "b*")
 
-        # mark the midpoint
+...     # mark the midpoint
 ...     ax.plot(p0[0], p0[1], "r.")
 
-        # plot the circle
+...     # plot the circle
 ...     ax.add_patch(mpatches.Circle(p0, r0, fc="w", ec="r", lw=1.5))
 
 ...     ax.grid(True)
