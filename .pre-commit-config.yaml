@@ -27,9 +27,6 @@ repos:
   - repo: https://github.com/python-jsonschema/check-jsonschema
     rev: 0.31.1
     hooks:
-      - id: check-dependabot
-        args: [ "--verbose" ]
-
       - id: check-renovate
         args: [ "--verbose" ]
 
