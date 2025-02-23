@@ -11,6 +11,13 @@
 make install
 ```
 
+Construct a cloud of $200$ points with
+
+```python
+>>> import numpy as np
+>>> points = np.random.randn(200, 2)
+```
+
 This installs/updates [uv](https://github.com/astral-sh/uv),
 creates your virtual environment and installs dependencies.
 
