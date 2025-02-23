@@ -22,27 +22,3 @@ Construct a cloud of $200$ points with
 ...     # The server will return a dictionary of numpy arrays
 ...     results = client.compute(command="test", data=data)
 ```
-
-```python
-import matplotlib.patches as mpatches
-import matplotlib.pyplot as plt
-
-def plot_points(p, p0, r0):
-     _, ax = plt.subplots()
-     ax.set_aspect("equal")
-
-     # plot the cloud of points
-     ax.plot(p[:, 0], p[:, 1], "b*")
-
-     # mark the midpoint
-     ax.plot(p0[0], p0[1], "r.")
-
-     # plot the circle
-     ax.add_patch(mpatches.Circle(p0, r0, fc="w", ec="r", lw=1.5))
-
-     ax.grid(True)
-     return ax
-
-ax = plot_points(results["points"], results["midpoint"], results["radius"])
-ax.set_title("Smallest enclosing circle")
-```
