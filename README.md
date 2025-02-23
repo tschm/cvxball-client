@@ -17,7 +17,7 @@ Construct a cloud of $200$ points with
 ```python
 >>> from np.flight import Client
 
-# Connect to the server
+>>> # Connect to the server
 >>> with Client("grpc+tls://cvxball-710171668953.us-central1.run.app:443") as client:
 ...     # The server will return a dictionary of numpy arrays
 ...     results = client.compute(command="test", data=data)
