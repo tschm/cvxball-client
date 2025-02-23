@@ -1,3 +1,0 @@
-plotly==6.0.0
-numpy==2.2.3
-numpy-flight==0.0.8
