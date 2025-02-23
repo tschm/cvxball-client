@@ -1,5 +1,4 @@
 import doctest
-import os
 import re
 
 import pytest
@@ -22,9 +21,7 @@ def docstring(root_dir):
     return docstring
 
 
-def test_blocks(root_dir, docstring, capfd):
-    os.chdir(root_dir)
-
+def test_blocks(docstring, capfd):
     try:
         doctest.run_docstring_examples(docstring, globals())
     except doctest.DocTestFailure as e:
