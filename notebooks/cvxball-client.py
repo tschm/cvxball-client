@@ -25,7 +25,6 @@ def _():
     import matplotlib.patches as mpatches
     import matplotlib.pyplot as plt
 
-
     def plot_points(p, p0, r0):
         _, ax = plt.subplots()
         ax.set_aspect("equal")
@@ -41,6 +40,7 @@ def _():
 
         ax.grid(True)
         return ax
+
     return mpatches, plot_points, plt
 
 
@@ -55,6 +55,7 @@ def _():
 @app.cell
 def _(data, plot_points, plt):
     from np.flight import Client
+
     # Connect to the server
     with Client("grpc+tls://cvxball-710171668953.us-central1.run.app:443") as client:
         # The server will return a dictionary of numpy arrays
@@ -68,6 +69,7 @@ def _(data, plot_points, plt):
 @app.cell
 def _():
     import marimo as mo
+
     return (mo,)
 
 
