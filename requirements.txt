@@ -1,4 +1,4 @@
-numpy-flight==0.0.9
+numpy-flight==0.0.10
 numpy==2.2.4
 matplotlib==3.10.1
 pytest==8.3.5
