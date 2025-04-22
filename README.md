@@ -1,6 +1,7 @@
 # cvxball-client
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CodeFactor](https://www.codefactor.io/repository/github/tschm/cvxball-client/badge)](https://www.codefactor.io/repository/github/tschm/cvxball-client)
 [![Created with qCradle](https://img.shields.io/badge/Created%20with-qCradle-blue?style=flat-square)](https://github.com/tschm/experiments)
 
 ## Getting Started
