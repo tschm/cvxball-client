@@ -1,5 +1,5 @@
 import numpy as np
-from tschm.flight import Client
+from flight import Client
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 
