@@ -16,7 +16,7 @@ Construct a cloud of $200$ points with
 ```
 
 ```python
->>> from tschm.flight import Client
+>>> from flight import Client
 
 >>> # Connect to the server
 >>> with Client("grpc+tls://cvxball-710171668953.us-central1.run.app:443") as client:
