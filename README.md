@@ -24,4 +24,4 @@ Construct a cloud of $200$ points with
 ...     results = client.compute(command="test", data=data)
 ```
 
-Here is a complete [demo](demo.py).
+Here is a complete [demo](src/client/demo.py).
