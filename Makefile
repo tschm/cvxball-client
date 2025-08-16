@@ -1,27 +1,32 @@
+# Colors for pretty output
+BLUE := \033[36m
+BOLD := \033[1m
+GREEN := \033[32m
+RESET := \033[0m
+
 .DEFAULT_GOAL := help
 
-venv:
-	@curl -LsSf https://astral.sh/uv/install.sh | sh
-	@uv venv
+.PHONY: build clean book check
 
+install: ## install
+	task build:install
 
-.PHONY: install
-install: venv ## Install a virtual environment
-	@uv pip install --upgrade pip
-	@uv pip install -r requirements.txt
+clean: ## clean
+	task cleanup:clean
 
+test: install ## run all tests
+	task docs:test
 
-.PHONY: fmt
-fmt: venv ## Run autoformatting and linting
-	@uvx pre-commit run --all-files
+book: test ## compile the companion book
+	task docs:docs
+	task docs:marimushka
+	task docs:book
 
+check: install ## check the pre-commit hooks, the linting and deptry
+	task quality:check
 
-.PHONY: clean
-clean:  ## Clean up caches and build artifacts
-	@git clean -X -d -f
-
-
-.PHONY: help
-help:  ## Display this help screen
-	@echo -e "\033[1mAvailable commands:\033[0m"
-	@grep -E '^[a-z.A-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-18s\033[0m %s\n", $$1, $$2}' | sort
+help: ## Display this help message
+	@printf "$(BOLD)Usage:$(RESET)\n"
+	@printf "  make $(BLUE)<target>$(RESET)\n\n"
+	@printf "$(BOLD)Targets:$(RESET)\n"
+	@awk 'BEGIN {FS = ":.*##"; printf ""} /^[a-zA-Z_-]+:.*?##/ { printf "  $(BLUE)%-15s$(RESET) %s\n", $$1, $$2 } /^##@/ { printf "\n$(BOLD)%s$(RESET)\n", substr($$0, 5) }' $(MAKEFILE_LIST)

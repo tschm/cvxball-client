@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = {file = "LICENSE"}
 authors = [
-    {name = "Thomas Schmelzer", email = ""}
+    {name = "Thomas Schmelzer", email = "thomas.schmelzer@example.com"}
 ]
 dependencies = [
     "numpy-flight==0.0.14",
@@ -29,3 +29,11 @@ packages = ["src/client"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+
+# Deptry dependency checker configuration
+[tool.deptry]
+# see https://deptry.com/usage/#pep-621-dev-dependency-groups
+pep621_dev_dependency_groups = ["dev"]
+
+[tool.deptry.package_module_name_map]
+numpy-flight = ["flight"]
