@@ -1,7 +1,13 @@
-import numpy as np
-from flight import Client
+"""Demo script for the cvxball client.
+
+This module demonstrates how to use the cvxball client to compute the smallest
+enclosing circle for a cloud of random points and visualize the results.
+"""
+
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
+import numpy as np
+from flight import Client
 
 if __name__ == "__main__":
     data = {"input": np.random.randn(200, 2)}
@@ -11,6 +17,16 @@ if __name__ == "__main__":
         results = client.compute(command="test", data=data)
 
     def plot_points(p, p0, r0):
+        """Plot the cloud of points and the enclosing circle.
+
+        Args:
+            p: Array of points to plot
+            p0: Center point of the enclosing circle
+            r0: Radius of the enclosing circle
+
+        Returns:
+            The matplotlib axis object with the plot
+        """
         _, ax = plt.subplots()
         ax.set_aspect("equal")
 
