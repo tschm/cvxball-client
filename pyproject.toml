@@ -10,7 +10,7 @@ authors = [
 ]
 dependencies = [
     "numpy-flight==0.0.14",
-    "numpy==2.3.2",
+    "numpy==2.3.3",
     "matplotlib==3.10.6",
 ]
 
