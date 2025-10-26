@@ -9,7 +9,7 @@ authors = [
     {name = "Thomas Schmelzer", email = "thomas.schmelzer@example.com"}
 ]
 dependencies = [
-    "numpy-flight==0.0.14",
+    "numpy-flight==0.0.16",
     "numpy==2.3.4",
     "matplotlib==3.10.7",
 ]
