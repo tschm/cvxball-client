@@ -13,6 +13,7 @@ Construct a cloud of $200$ points with
 ```python
 >>> import numpy as np
 >>> data = {"input": np.random.randn(200, 2)}
+
 ```
 
 ```python
@@ -22,6 +23,7 @@ Construct a cloud of $200$ points with
 >>> with Client("grpc+tls://cvxball-710171668953.us-central1.run.app:443") as client:
 ...     # The server will return a dictionary of numpy arrays
 ...     results = client.compute(command="test", data=data)
+
 ```
 
 Here is a complete [demo](src/client/demo.py).
