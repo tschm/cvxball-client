@@ -1,18 +1,29 @@
-"""Test configuration and fixtures for the cvxball-client project.
+"""Shared pytest fixtures for the test suite.
 
-This module contains pytest fixtures that are available to all test modules.
+Provides the 'root' fixture that returns the repository root as a pathlib.Path,
+enabling tests to locate files and scripts relative to the project root.
 """
 
-from pathlib import Path
+import logging
+import pathlib
 
 import pytest
 
 
-@pytest.fixture(name="root_dir")
-def root_fixture() -> Path:
-    """Provide the root directory of the project.
+@pytest.fixture(scope="session")
+def root():
+    """Return the repository root directory as a pathlib.Path.
+
+    Used by tests to locate files and scripts relative to the project root.
+    """
+    return pathlib.Path(__file__).parent.parent
+
+
+@pytest.fixture(scope="session")
+def logger():
+    """Provide a session-scoped logger for tests.
 
     Returns:
-        Path: The absolute path to the project root directory
+        logging.Logger: Logger configured for the test session.
     """
-    return Path(__file__).parent.parent
+    return logging.getLogger(__name__)
