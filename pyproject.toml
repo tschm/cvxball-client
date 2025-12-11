@@ -11,7 +11,7 @@ authors = [
 dependencies = [
     "numpy-flight==0.0.16",
     "numpy==2.3.5",
-    "matplotlib==3.10.7",
+    "matplotlib==3.10.8",
 ]
 
 [project.optional-dependencies]
